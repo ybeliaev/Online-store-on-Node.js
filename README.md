@@ -1,4 +1,4 @@
-# Online-store-on-Node.js
+# Интеренет магазин на Node.js
 ![alt node.js](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/250px-Node.js_logo.svg.png)
 
 ## Установка node.js
