@@ -30,10 +30,7 @@ http.createServer().listen(3000)
 В адресной строке ввожу ```http://localhost:3000/```
 Будет крутиться загрузка - нечем ответить серверу. Научим его отвечать.
 ```node.js
-// подключаем модуль http, сохраняем его в константу http
 const http = require('http');
-// запуск модуля
-// 3000 - порт ,т.е своего рода номер на который могу обратиться и получить ответ
 // http.createServer().listen(3000)
 // учим серевер отвечать
 // в request попадает всё о браузере времени запроса, методе запроса
@@ -42,6 +39,18 @@ http.createServer(function(request, response){
     response.end('<h1>Hello, it is my first server on Node</h1>')
 }).listen(3000)
 ```
-Чтобы постоянно не перезапускать - можно установить https://www.npmjs.com/package/nodemon
-F12 по http://localhost:3000/ и Ctrl+Shift+R и во вкладке All панельки Network
+Чтобы постоянно не перезапускать - можно установить https://www.npmjs.com/package/nodemon и запуск ``` nodemon app.js```
+* F12 по http://localhost:3000/ и Ctrl+Shift+R и во вкладке All панельки Network
+* Вкладка Header для поля localhost таблицы Name - то что в request. Request - объект со свойствами ,поэтому можно:
+```node.js
+const http = require('http');
 
+http.createServer(function(request, response){
+    console.log(request.url);
+    if(request.url=='/'){
+        response.end('Main server')
+    }else if(request.url=='/cat'){
+        response.end('Category')
+    }    
+}).listen(3000)
+```
