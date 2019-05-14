@@ -18,7 +18,7 @@
 * Вывод команды перенаправить в файл: ``` dir > t.txt ```. Результат будет записан в созданный файл t.txt
 ## Создание сервера на node.js
 Создаю файл ```app.js```
-С содержимым:
+с содержимым:
 ```node.js
 // подключаем модуль http, сохраняем его в константу http
 const http = require('http');
@@ -27,5 +27,21 @@ const http = require('http');
 http.createServer().listen(3000)
 ```
 Запускаю выполнение из консоли ```node app ```
-
+В адресной строке ввожу ```http://localhost:3000/```
+Будет крутиться загрузка - нечем ответить серверу. Научим его отвечать.
+```node.js
+// подключаем модуль http, сохраняем его в константу http
+const http = require('http');
+// запуск модуля
+// 3000 - порт ,т.е своего рода номер на который могу обратиться и получить ответ
+// http.createServer().listen(3000)
+// учим серевер отвечать
+// в request попадает всё о браузере времени запроса, методе запроса
+// response - то что ответит сервер
+http.createServer(function(request, response){
+    response.end('<h1>Hello, it is my first server on Node</h1>')
+}).listen(3000)
+```
+Чтобы постоянно не перезапускать - можно установить https://www.npmjs.com/package/nodemon
+F12 по http://localhost:3000/ и Ctrl+Shift+R и во вкладке All панельки Network
 
