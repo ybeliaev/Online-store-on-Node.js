@@ -90,18 +90,13 @@ const http = require('http');
 // для возможности чтения из файла подкл. модуль
 const fs = require('fs');
 
-http.createServer(function(request, response){
-    console.log(request.url);// можно вывести url
-    console.log(request.method); // можно вывести метод
-    console.log(request.headers['user-agent']) // данные о браузере, операц. системе
-
-    // setHeader укажет распознавать теги и кириллицу
+http.createServer(function(request, response){   
+    
     response.setHeader('Content-Type', 'text/html;charset=utf-8;')
 
     if(request.url=='/'){
         response.end('<strong>Main server</strong>. Этот текст для проверки кириллицы.')
-        // русский тест не отобразится
-
+        
     }else if(request.url=='/cat'){
         response.end('<i>Category</i>')
     }else if(request.url=='/dat'){
@@ -113,5 +108,5 @@ http.createServer(function(request, response){
 }).listen(3000)
 ```
 * ввожу в адр. строке http://localhost:3000/dat и получаю html 
-
+* НО ... если я положе картинку локально - она НЕ отобразится.
 
