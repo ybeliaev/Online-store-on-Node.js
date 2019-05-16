@@ -74,3 +74,11 @@ http.createServer(function(request, response){
     }    
 }).listen(3000)
 ```
+### Хочу открыть файл и показать его содержимое в строку.
+* Для этого создаю 1.dat
+```html
+<h1>Hello!</h1>
+<h2>Hi!</h2>
+<img src="https://cdn2.iconfinder.com/data/icons/whcompare-isometric-web-hosting-servers/50/server-2-256.png" alt="server">
+```
+
