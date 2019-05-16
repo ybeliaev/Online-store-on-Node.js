@@ -56,7 +56,7 @@ http.createServer(function(request, response){
 ```
 #### модифицирую код
 
-```
+```node.js
 const http = require('http');
 
 http.createServer(function(request, response){
