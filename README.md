@@ -81,4 +81,37 @@ http.createServer(function(request, response){
 <h2>Hi!</h2>
 <img src="https://cdn2.iconfinder.com/data/icons/whcompare-isometric-web-hosting-servers/50/server-2-256.png" alt="server">
 ```
+https://nodejs.org/dist/latest-v6.x/docs/api/fs.html#fs_fs_readfile_file_options_callback
+* справка по fs.readFile
+https://ru.code-maven.com/reading-a-file-with-nodejs 
+
+```node.js
+const http = require('http');
+// для возможности чтения из файла подкл. модуль
+const fs = require('fs');
+
+http.createServer(function(request, response){
+    console.log(request.url);// можно вывести url
+    console.log(request.method); // можно вывести метод
+    console.log(request.headers['user-agent']) // данные о браузере, операц. системе
+
+    // setHeader укажет распознавать теги и кириллицу
+    response.setHeader('Content-Type', 'text/html;charset=utf-8;')
+
+    if(request.url=='/'){
+        response.end('<strong>Main server</strong>. Этот текст для проверки кириллицы.')
+        // русский тест не отобразится
+
+    }else if(request.url=='/cat'){
+        response.end('<i>Category</i>')
+    }else if(request.url=='/dat'){
+        
+        // прочитаю содержимое файла
+        let myFile = fs.readFileSync('1.dat', 'utf8');
+        response.end(myFile)
+    }    
+}).listen(3000)
+```
+* ввожу в адр. строке http://localhost:3000/dat и получаю html 
+
 
