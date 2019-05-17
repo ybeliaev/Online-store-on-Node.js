@@ -108,7 +108,7 @@ http.createServer(function(request, response){
 }).listen(3000)
 ```
 * ввожу в адр. строке http://localhost:3000/dat и получаю html 
-* **НО ... если я положу картинку локально - она НЕ отобразится:**
+* **НО ... если я положу картинку локально - она НЕ отобразится:** она будет в state ```panding```
 ```html
 ...some code
 <img src="./server.png" alt="server">
@@ -118,6 +118,22 @@ http.createServer(function(request, response){
 nodemon app
 ```
 ## Установка и настройка Express
+https://expressjs.com/ru/
+```node.js
+node init
+```
+```node.js
+npm install express --save
+```
+Благодаря ключу ```---save```"express" попадает в зависимости:
+```json
+...
+"dependencies": {
+    "express": "^4.17.0"
+  }
+ ```
+* Теперь для установки на новой машине достаточно ввести команду ``` node install``` и подтянутся все необходимые пакеты. 
+* Вышесказанное произойдёт **без** начального наличия папки node_modules и файла package-lock.json
 
 
 
