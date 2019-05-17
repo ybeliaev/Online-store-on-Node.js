@@ -108,7 +108,11 @@ http.createServer(function(request, response){
 }).listen(3000)
 ```
 * ввожу в адр. строке http://localhost:3000/dat и получаю html 
-* НО ... если я положе картинку локально - она НЕ отобразится.
+* **НО ... если я положу картинку локально - она НЕ отобразится:**
+```html
+...some code
+<img src="./server.png" alt="server">
+```
 * Напомню, что ```nodemon``` я глобально установил ,поэтому можно запускать сервер командой
 ```node.js
 nodemon app
