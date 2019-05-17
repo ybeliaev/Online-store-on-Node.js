@@ -134,7 +134,23 @@ npm install express --save
  ```
 * Теперь для установки на новой машине достаточно ввести команду ``` node install``` и подтянутся все необходимые пакеты. 
 * Вышесказанное произойдёт **без** начального наличия папки node_modules и файла package-lock.json
+* Запускаю следующий код командой ```node app```:
+```node.js
+let express = require('express');
 
+// создаю новый экземпляр объекта эксперсс
+let app = express();
+
+// запуск сервера
+app.listen(3000, function(){
+    console.log('node express work on 3000!');
+});
+
+// приложение. req - запрос, res - ответ
+app.get('/', function(req, res){
+    res.end('Hello!');
+})
+```
 
 
 
