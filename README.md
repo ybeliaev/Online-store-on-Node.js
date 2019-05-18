@@ -141,16 +141,28 @@ let express = require('express');
 // создаю новый экземпляр объекта эксперсс
 let app = express();
 
+// подключаю статику
+/**
+ * public - имя папки ,где хранится статика
+ */
+app.use(express.static('public'))
+
 // запуск сервера
 app.listen(3000, function(){
     console.log('node express work on 3000!');
 });
 
 // приложение. req - запрос, res - ответ
+// в данном примере обращение идёт get запросом (app.get)
 app.get('/', function(req, res){
     res.end('Hello!');
 })
-```
 
+app.get('/cat', function(req, res){
+    res.end('Hello, CAT!');// http://localhost:3000/cat выведет 'Hello, CAT!'
+})
+```
+* Создаю папку public, в которой папки js, images, css... Также создаю файл index.html.
+* Теперь нужно научить экспресс читать этот файл
 
 
