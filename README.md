@@ -188,7 +188,14 @@ app.get('/cat', function(req, res){
 ## Отладка на Node.js
 **https://expressjs.com/uk/starter/generator.html**
 * В доках ```> set DEBUG=myapp:* & npm start```
-* Я пишу: ```> set DEBUG=express:* & npm app```  - в пеерменную DEBUG попадает приложение express и * - будет вывод ВСЕЙ отладки
+* Я пишу: ```> set DEBUG=express:* & npm app```  - в переменную DEBUG попадает приложение express и * - будет вывод ВСЕЙ отладки
+* & укажет на последовательность команд: вначале & после этого
+* Можно указать вид необх. информации: 
+* ```> set DEBUG=express:router & npm app``` - для начала достаточно этого.
+* Или ```> set DEBUG=express:aplication & npm app```
+#### как быть с nodemon?
+* После  ``` set DEBUG=express:router & npm app``` переменная DEBUG сохраняется , поэтому достаточно ввести
+``` nodemon app.js```
 
 
 
