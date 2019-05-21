@@ -201,5 +201,11 @@ app.get('/cat', function(req, res){
 https://pugjs.org/api/getting-started.html
 
 * ``` npm install pug --save ```
-* В ```app.js``` добавляю строку ```node.js app.set('view ingine', 'pug');```
+* В ```app.js``` добавляю строку 
+```node.js
+app.set('view ingine', 'pug');
+```
+
+* Создаю папку *views* где будут шаблоны *pug*
+
 
