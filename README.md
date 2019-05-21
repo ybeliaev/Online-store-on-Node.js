@@ -175,7 +175,7 @@ app.listen(3000, function(){
 });
 
 app.get('/', function(req, res){
-    console.log('load /')
+    console.log('load /') // сейчас  этот второй вывод не выведет - только первый 'node express work on 3000!' 
     res.render(index.html);
 })
 
@@ -184,4 +184,11 @@ app.get('/cat', function(req, res){
 })
 ```
 * Картинки и стили отлично считались.(см. папку 2)
+
+## Отладка на Node.js
+**https://expressjs.com/uk/starter/generator.html**
+* В доках ```> set DEBUG=myapp:* & npm start```
+* Я пишу: ```> set DEBUG=express:* & npm app```  - в пеерменную DEBUG попадает приложение express и * - будет вывод ВСЕЙ отладки
+
+
 
