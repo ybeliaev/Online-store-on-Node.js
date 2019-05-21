@@ -197,5 +197,9 @@ app.get('/cat', function(req, res){
 * После  ``` set DEBUG=express:router & npm app``` переменная DEBUG сохраняется , поэтому достаточно ввести
 ``` nodemon app.js```
 
+## Работа с PUG
+https://pugjs.org/api/getting-started.html
 
+* ``` npm install pug --save ```
+* В ```app.js``` добавляю строку ```node.js app.set('view ingine', 'pug');```
 
