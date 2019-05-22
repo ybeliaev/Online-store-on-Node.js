@@ -217,14 +217,25 @@ app.listen(3000, function(){
 });
 
 app.get('/', function (req, res) {
-    res.render('index');
+    res.render('index', {
+        name: 'John',
+        age: 120
+    });
   });
 
 app.get('/cat', function(req, res){
     res.end('Hello, CAT!');
 })
 ```
+* В препроцессор был передан объект. На странице он выводится конструкцией ```#{}```
+```pug
+include header
 
+h2 Hi!
+a(href="images/server.png")
+h3 #{name}
+h3 #{age}
+```
 
 
 
