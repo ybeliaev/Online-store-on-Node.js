@@ -258,10 +258,12 @@ DROP TABLE IF EXISTS `category`;
 
 CREATE TABLE `category` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
-    `category` varchar(255) DEFAULT NULL,
-    `description` varchar(500) DEFAULT NULL,
-    PRIMARY KEY (`id`)
+    	`category` varchar(255) DEFAULT NULL,
+    	`description` varchar(500) DEFAULT NULL,
+   	 PRIMARY KEY (`id`)
 )
 ```
-* Нажать на значёк молнии для исполнния
+* Нажать на значёк молнии для исполнения, а затем значёк обновить чтобы появилась таблица ```category```
+* ПКМ на названии таблицы и выбрать ```Alter table``` - сможет работать со структурой таблицы
+
 
