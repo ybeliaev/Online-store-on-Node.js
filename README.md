@@ -247,5 +247,21 @@ h3 #{age}
 * Должна проинсталироваться и программа MySQL Workbench.
 * Добавляем соединение на главной панели нажатием на плюсик: MySQL Connection +
 * Прописываем имя соединения, вводим пароль.
-* Создаём новую базу "create a new schema..." в ней таблицу...
+* Создаём новую базу "create a new schema..." 
+* Выбрать charset и apply
+* ПКМ на новой базе -> Set as default schema
+
+## Ввод данных в базу
+* Открыть новую вкладку Query 1 и в ней пишу запрос:
+```mySQL
+DROP TABLE IF EXISTS `category`;
+
+CREATE TABLE `category` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+    `category` varchar(255) DEFAULT NULL,
+    `description` varchar(500) DEFAULT NULL,
+    PRIMARY KEY (`id`)
+)
+```
+* Нажать на значёк молнии для исполнния
 
