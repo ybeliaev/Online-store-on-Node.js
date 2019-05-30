@@ -293,4 +293,40 @@ INSERT INTO `goods` VALUES (1, 'Asus X507MA (X507MA-EJ020) Gold','15,6" (1920x10
 ```
 * ``` npm install mysql --save```  - без этого модуля не будет соединения с базой
 * Запуск проекта ```nodemon app.js```
+* В случае ошибок выполнить запрос ```ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'здесь пароль';``` в MySQL Workbench
+```node.js
+let express = require('express');
+let app = express();
 
+app.use(express.static('public'));
+app.set('views', './views');
+app.set('view engine', 'pug');
+
+app.listen(3000, function(){
+    console.log('node express work on 3000!');
+});
+
+// подключаю модуль для соединения с базой данных
+let mysql      = require('mysql');
+// настройка модуля
+let con = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '1234',
+    database: 'market'
+});
+
+app.get('/', function (req, res) {
+    con.query(
+        'SELECT name FROM goods;', // название запроса, далeе ф-я обрабатывающая запрос
+        function(err, result){
+            if (err) throw err;
+            console.log(result);
+        }
+    )
+    res.render('index', {
+        name: 'John',
+        age: 120
+    });
+  });
+```
