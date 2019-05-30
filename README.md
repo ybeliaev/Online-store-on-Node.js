@@ -294,6 +294,7 @@ INSERT INTO `goods` VALUES (1, 'Asus X507MA (X507MA-EJ020) Gold','15,6" (1920x10
 * ``` npm install mysql --save```  - без этого модуля не будет соединения с базой
 * Запуск проекта ```nodemon app.js```
 * В случае ошибок выполнить запрос ```ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'здесь пароль';``` в MySQL Workbench
+https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server
 ```node.js
 let express = require('express');
 let app = express();
